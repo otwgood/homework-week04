@@ -12,5 +12,31 @@ class HomeScreen extends StatefulWidget{
 class _HomeScreenState extends State<HomeScreen> {
   final PageController pageController = PageControlloer();
 
-  
+  @overrride
+  void initState() {
+    super.initState();
+
+    Timer.periodic(
+      Duration(seconds: 3),
+      (timer) {
+        int? nextPage = pageController.page?.toInt();
+
+        if(nextPage == null) {
+          return;
+        } 
+        if (nextPage == 4) {
+          nextPage = 0;
+        } else {
+          nextPage++;
+        }
+        pageController.animateToPage(
+          nextPage,
+          duration: Duration(milliseconds: 500),
+          curve: Curves.ease,
+        );
+      },
+    );
+  }
+
+  @
 }
