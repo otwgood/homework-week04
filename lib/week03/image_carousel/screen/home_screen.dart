@@ -38,5 +38,22 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  @
+  @override
+  Widget build(BuildContext constext) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
+    return Scaffold(
+      body: PageView(
+        controller: pageController,
+        children: [1, 2, 3, 4, 5]
+        .map(
+            (number) => Image.asset(
+              'asset/img/image_$number.jpeg',
+              fit: BoxFit.cover,
+              ), 
+          )
+          .toList(),
+      )
+    );
+  }
 }
