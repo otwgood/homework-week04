@@ -114,4 +114,17 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
   }
+
+  class _CopleImage extends StatelessWidget {
+    @override
+    Widget build(buildContext context) {
+      return Center(
+        child: Image.asset(
+          'asset/img/middle_image.png',
+
+          height: MediaQuery.of(context).size.height / 2,
+        ),
+      );
+    }
+  }
 }
